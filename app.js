@@ -7,6 +7,7 @@ const mangoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourRouter = require('./routes/tourRoutes');
@@ -60,10 +61,12 @@ app.use(
   })
 );
 
+app.use(compression());
+
 //Test middleware
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString();
-  console.log(req.cookies);
+  // console.log(req.cookies);
   // console.log(req.headers);
 
   next();
@@ -82,7 +85,7 @@ app.all('*', (req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.log(err.stack);
+  // console.log(err.stack);
 
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'error';
