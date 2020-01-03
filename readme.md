@@ -4,7 +4,9 @@ This is an online tour booking service built using node.js, express, mongoDB, mo
 
 ## Demo
 
-[See demo here]{trippiers.herokuapp.com}
+[See demo here]{https://trippiers.herokuapp.com}
+
+![pic1](/demo/pic1.png)
 
 ## Features
 
