@@ -13,7 +13,10 @@ This is an online tour booking service built using node.js, express, mongoDB, mo
 - log out
 - update password
 - forget and reset password
+- check detailed information of tours
+- check all the destinations of a tour on one map
 - online payment
+- check reviews from other customers
 - create reviews
 - CRUD operations
 
